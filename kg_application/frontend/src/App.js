@@ -8,16 +8,15 @@ function App() {
   let [result, setResult] = useState("")
   let doQuery = async () => {
     let queryValue = formRef.current.getFieldValue()['query_value']
-    let response = await Axios.get("api/query",
+    let response = await Axios.get("api",
       {
         method: 'GET',
         params: {
-          "query_value": queryValue
+          "query": queryValue
         }
-      }
-    )
-    console.log(response);
-    setResult(queryValue)
+      });
+    console.log(response.data)
+    setResult(response.data)
   }
   return (
     <>
@@ -53,7 +52,7 @@ function App() {
               </Button>
             </Form.Item>
           </Form>
-          <Text>查询结果: {result} </Text>
+          <Text> {result.split('\n').map(line => (<p>{line}</p>))} </Text>
         </Col>
         <Col span={8}></Col>
       </Row>

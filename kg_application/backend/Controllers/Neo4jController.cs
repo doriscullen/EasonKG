@@ -4,7 +4,7 @@ namespace backend.Controllers;
 using Neo4j.Driver;
 using System.Text;
 
-[Route("api/")] 
+[Route("api")] 
 [ApiController] 
 public class Neo4jController : ControllerBase 
 { 
