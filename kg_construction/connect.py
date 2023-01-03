@@ -6,9 +6,9 @@ graph = Graph("neo4j://localhost:7687", auth=("neo4j", "ZJUKG2022"))
 graph.run('match (n) DETACH DELETE n')
 
 #read in data
-relation_data = pd.read_csv('data_collection/data/relation_final.csv')
+relation_data = pd.read_csv('../data_collection/data/relation.csv')
 relation_data.columns = ['obj1', 'relation', 'obj2']
-date_data = pd.read_csv('data_collection/data/date_final.csv')
+date_data = pd.read_csv('../data_collection/data/song_date.csv')
 date_data.columns = ['song', 'attribute', 'value']
 
 songs = {}

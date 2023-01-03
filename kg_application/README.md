@@ -1,4 +1,4 @@
-# Knowledge graph for Eason Chan's songs
+# 陈奕迅音乐作品知识图谱
 ## 知识图谱应用
 
 [TOC]
