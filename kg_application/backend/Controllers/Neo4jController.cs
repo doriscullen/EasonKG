@@ -140,7 +140,7 @@ public class Neo4jController : ControllerBase
             return StatusCode(201, s); 
         }
         
-        return StatusCode(201, "无匹配");
+        return StatusCode(201, "请检查问句格式！");
     }
 
     private async Task<string[]> _getAlbum(string name)
@@ -151,7 +151,7 @@ public class Neo4jController : ControllerBase
         };
         
         var session = this._driver.AsyncSession();
-        var result = await session.RunAsync("match (a:`歌曲`{`名字`:$name})-[:`所属专辑`]->(b:`音乐专辑`) return b.名字", statementParameters);
+        var result = await session.RunAsync("match (a:`歌曲`{`名字`:$name})-[:`所属专辑`]->(b) return b.名字", statementParameters);
         var resultList = await result.ToListAsync(record =>record.Values["b.名字"]);
         List<string> strList = new List<string>(); 
         foreach (string v in resultList)
@@ -175,7 +175,7 @@ public class Neo4jController : ControllerBase
         };
         
         var session = this._driver.AsyncSession();
-        var result = await session.RunAsync("match (a:`歌曲`{`名字`:$name})-[:`作词`]->(b:`歌词作者`) return b.名字", statementParameters);
+        var result = await session.RunAsync("match (a:`歌曲`{`名字`:$name})-[:`作词`]->(b) return b.名字", statementParameters);
         var resultList = await result.ToListAsync(record =>record.Values["b.名字"]);
         List<string> strList = new List<string>(); 
         var i = 1;
@@ -201,7 +201,7 @@ public class Neo4jController : ControllerBase
         };
         
         var session = this._driver.AsyncSession();
-        var result = await session.RunAsync("match (a:`歌曲`{`名字`:$name})-[:`歌手`]->(b:`歌手`) return b.名字", statementParameters);
+        var result = await session.RunAsync("match (a:`歌曲`{`名字`:$name})-[:`歌手`]->(b) return b.名字", statementParameters);
         var resultList = await result.ToListAsync(record =>record.Values["b.名字"]);
         List<string> strList = new List<string>(); 
         var i = 1;
@@ -227,7 +227,7 @@ public class Neo4jController : ControllerBase
         };
         
         var session = this._driver.AsyncSession();
-        var result = await session.RunAsync("match (a:`歌曲`{`名字`:$name})-[:`作曲`]->(b:`歌曲作者`) return b.名字", statementParameters);
+        var result = await session.RunAsync("match (a:`歌曲`{`名字`:$name})-[:`作曲`]->(b) return b.名字", statementParameters);
         var resultList = await result.ToListAsync(record =>record.Values["b.名字"]);
         List<string> strList = new List<string>(); 
         var i = 1;
