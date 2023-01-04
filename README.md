@@ -4,7 +4,6 @@
 
 <center>
 <img src="concert_post.png" width="35%" height="35%" />
-
 图1：陈奕迅FearAndDreams演唱会海报（图源"陈奕迅FearAndDreams巡回演唱会"官方微博）
 </center>
 
@@ -19,7 +18,6 @@
 
 <center>
 <img src="kg_construction/graph.png" width="80%" height="80%" />
-
 图3：陈奕迅音乐作品知识图谱可视化结果
 </center>
 
