@@ -1,9 +1,16 @@
 # 陈奕迅音乐作品知识图谱
+
+
+> 项目开发者：徐晓丹、胡丽雅、周寒靖
+>
+> OpenKG网址：http://openkg.cn/dataset/easonkg
+
 ## 项目介绍
 2022年年末，陈奕迅的歌迷们终于盼来了在香港红馆举行的陈奕迅《FEAR AND DREAMS》演唱会，在此背景下，我们构建了陈奕迅音乐作品知识图谱，以便对陈奕迅演唱的作品进行更加深入的了解和分析。
 
 <center>
 <img src="concert_post.png" width="35%" height="35%" />
+
 图1：陈奕迅FearAndDreams演唱会海报（图源"陈奕迅FearAndDreams巡回演唱会"官方微博）
 </center>
 
@@ -11,6 +18,7 @@
 
 <center>
 <img src="data_collection/example.png" width="60%" height="60%" />
+
 图2：关系抽取示例
 </center>
 
@@ -18,6 +26,7 @@
 
 <center>
 <img src="kg_construction/graph.png" width="80%" height="80%" />
+
 图3：陈奕迅音乐作品知识图谱可视化结果
 </center>
 
